@@ -25,3 +25,4 @@ To run your tests
 |Table of contennt||
 |-----|----|
 |array-insert-shift|[array-insert-shift](./javascript/array-shift//array-insert.md)|
+|reversed array|[reversed array](/chanllenge-01/reverse.md)|
