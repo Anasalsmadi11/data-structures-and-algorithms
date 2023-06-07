@@ -21,3 +21,7 @@ To run your tests
 ### 401 Data Structures, Code Challenges
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+
+|Table of contennt||
+|-----|----|
+|array-insert-shift|[array-insert-shift](./javascript/array-shift//array-insert.md)|
