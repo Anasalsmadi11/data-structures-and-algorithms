@@ -1,0 +1,1 @@
+![array-binary-search](Screenshot%202023-06-12%20212004.png)
