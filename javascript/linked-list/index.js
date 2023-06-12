@@ -7,40 +7,48 @@ class Node {
     }
   }
 
-class LinkedList {
-    constructor(){
-        this.head= null;
+  class LinkedList {
+    constructor() {
+      this.head = null;
     }
-    insert(value){
-        const newNode = new Node(value);
-        if (!this.head) {
-          this.head = newNode;
-        } else {
-          newNode.next = this.head;
-          this.head = newNode;
-        }
-    };
-    includes(value){
-        let current = this.head;
-    while (current) {
-      if (current.value === value) {
-        return true;
+  
+    insert(value) {
+      const newNode = new Node(value);
+  
+      if (!this.head) {
+        this.head = newNode;
+      } else {
+        newNode.next = this.head;
+        this.head = newNode;
       }
-      current = current.next;
     }
-    return false;
+  
+    includes(value) {
+      let currentNode = this.head;
+  
+      while (currentNode) {
+        if (currentNode.value === value) {
+          return true;
+        }
+        currentNode = currentNode.next;
+      }
+  
+      return false;
     }
+  
     toString() {
-        let current = this.head;
-        let result = "";
-        while (current) {
-          result += `{ ${current.value} } -> `;
-          current = current.next;
-        }
-        result += "NULL";
-        return result;
+      let currentNode = this.head;
+      let result = '';
+  
+      while (currentNode) {
+        result += `{ ${currentNode.value} } -> `;
+        currentNode = currentNode.next;
       }
-}
+  
+      result += 'NULL';
+      return result;
+    }
+  }
 
 const myLinkedList = new LinkedList();
 
