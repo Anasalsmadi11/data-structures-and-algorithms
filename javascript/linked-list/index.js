@@ -49,15 +49,17 @@ class Node {
       return result;
     }
   }
-  let linkedList= new LinkedList()
-  linkedList.insert('c');
-  linkedList.insert('b');
-  linkedList.insert('a');
 
-  console.log(linkedList.includes('b')); // Output: true
-console.log(linkedList.includes('d')); // Output: false
+const myLinkedList = new LinkedList();
 
 
-console.log(linkedList.toString());
+myLinkedList.insert('c');
+myLinkedList.insert('b');
+myLinkedList.insert('a');
 
+
+console.log(myLinkedList.includes('b'));  // true
+console.log(myLinkedList.includes('d'));  // false
+
+console.log(myLinkedList.toString());
 module.exports = LinkedList;
