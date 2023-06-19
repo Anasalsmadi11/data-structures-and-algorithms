@@ -1,0 +1,1 @@
+![linkedList-insertions](./Screenshot%202023-06-19%20212755.png)
