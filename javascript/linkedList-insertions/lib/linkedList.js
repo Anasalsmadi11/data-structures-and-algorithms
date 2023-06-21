@@ -68,7 +68,7 @@ class LinkedList {
       while (current) {
         if (current.value === value) {
             // Found the node with the specified value, insert the new node after it
-            newNode.next = current.next; // without this it wont point to the next node, it will be like this (50 -> 100 -> 1500) ,but with it it will be like this(50 -> 100 -> 1500 -> 200)
+            newNode.next = current.next; // here i assigned the next value of the node i created to be current.next because the default value of the next (from the class Node) is null thats why i need to reassign its value // without this it wont point to the next node, it will be like this (50 -> 100 -> 1500) ,but with it it will be like this(50 -> 100 -> 1500 -> 200)
             current.next = newNode;
           return;
         }
