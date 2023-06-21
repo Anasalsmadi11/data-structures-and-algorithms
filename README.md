@@ -30,4 +30,5 @@ To run your tests
 |linked-list|[linked-list](/javascript/linked-list/linked-list.md)|
 
 |array-binary-search.|[array-binary-search.](/javascript/array-binary-search/array-binary-search.md)|
-|linkedList-insertions|[linkedList-insertions](/javascript/linkedList-insertions/linkedList-insertions.md)|
+|linkedList-insertions|[linkedList-insertions](/javascript/linkedList//linkedList-insertions.md)|
+|[linkedList-kth|[[linkedList-kth](/javascript/linkedList/linkedList-kth.md)|

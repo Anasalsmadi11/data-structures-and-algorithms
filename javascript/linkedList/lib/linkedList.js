@@ -75,7 +75,37 @@ class LinkedList {
         current = current.next; // this is to go to the next node
       }
     }
+  /// ====================== linkedlist-kth====
+
+  kthFromEnd(k) {
+    if (this.head === null) {
+      return null;
+    }
+
+    // Create two pointers, initially pointing to the head
+    let p1 = this.head;
+    let p2 = this.head;
+
+
+    for (let i = 0; i < k; i++) {
+      if (p2 === null) {
+        return null;
+      }
+      p2 = p2.next;
+    }
+
+
+    while (p2.next !== null) {
+      p1 = p1.next;
+      p2 = p2.next;
+    }
+
+
+    return p1.value;
+  }
+
   
+  /// ======================
     print() {
       let current = this.head;
       let values = [];
