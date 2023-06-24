@@ -1,4 +1,6 @@
 const LinkedList = require('../lib/linkedList');
+const zipLists= require('../index')
+
 
 describe('LinkedList', () => {
   let linkedList;
@@ -59,6 +61,43 @@ describe('LinkedList', () => {
 //   expect(linkedList.kthFromEnd(2)).toBe(3); // k = 2
 //   expect(linkedList.kthFromEnd(5)).toBeNull(); // k = 5 (greater than the length of the list)
 // });
+ 
+//////////////// linkedlist-zip ///////////////
 
+test('should zip two linked lists together', () => {
+  const list1 = new LinkedList();
+  list1.append(1);
+  list1.append(3);
+  list1.append(2);
+
+  const list2 = new LinkedList();
+  list2.append(5);
+  list2.append(9);
+  list2.append(4);
+
+  const result = zipLists(list1, list2);
+  expect(result.toString()).toBe('{1} -> {5} -> {3} -> {9} -> {2} -> {4} -> null');
+});
+
+test('should handle empty lists', () => {
+  const list1 = new LinkedList();
+  const list2 = new LinkedList();
+  const result = zipLists(list1, list2);
+  expect(result.toString()).toBe('null');
+});
+
+test('should handle one empty list', () => {
+  const list1 = new LinkedList();
+  list1.append(1);
+  list1.append(2);
+  list1.append(3);
+
+  const list2 = new LinkedList();
+  const result = zipLists(list1, list2);
+  expect(result.toString()).toBe('{1} -> {2} -> {3} -> null');
+
+  const result2 = zipLists(list2, list1);
+  expect(result2.toString()).toBe('{1} -> {2} -> {3} -> null');
+});
 
 });

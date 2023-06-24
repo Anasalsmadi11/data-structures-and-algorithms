@@ -26,9 +26,8 @@ To run your tests
 |-----|----|
 |array-insert-shift|[array-insert-shift](./javascript/array-shift//array-insert.md)|
 |reversed array|[reversed array](/chanllenge-01/reverse.md)|
-
 |linked-list|[linked-list](/javascript/linked-list/linked-list.md)|
-
 |array-binary-search.|[array-binary-search.](/javascript/array-binary-search/array-binary-search.md)|
 |linkedList-insertions|[linkedList-insertions](/javascript/linkedList//linkedList-insertions.md)|
-|[linkedList-kth|[[linkedList-kth](/javascript/linkedList/linkedList-kth.md)|
+|linkedList-kth|[linkedList-kth](/javascript/linkedList/linkedList-kth.md)|
+|linkedlist-zip|[linkedlist-zip](/javascript/linked-list/linkedlist-zip.md)|
