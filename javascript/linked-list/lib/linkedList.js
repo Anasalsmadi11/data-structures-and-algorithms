@@ -10,7 +10,7 @@ class LinkedList {
       const newNode = new Node(newValue);
   
       if (!this.head) {
-        // If the list is empty, set the new node as the head
+        
         this.head = newNode;
       } else {
         let current = this.head;
@@ -23,6 +23,18 @@ class LinkedList {
     }
     }
   
+    toString() {
+      let result = "";
+      let current = this.head;
+      while (current) {
+        result += `{${current.value}} -> `;
+        current = current.next;
+      }
+      result += "null";
+      return result;
+    }
+
+    
     insertBefore(value, newValue) {
       const newNode = new Node(newValue);
   
