@@ -89,7 +89,7 @@ class LinkedList {
     }
   /// ====================== linkedlist-kth====
 
-  kthFromEnd(k) {
+  kthFromEnd(k) { //https://www.youtube.com/watch?v=dKFvYm3P6OY&t=476s video explain the kth
     if (this.head === null) {
       return null;
     }
