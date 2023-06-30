@@ -25,7 +25,7 @@ node3.next = node4;
 
 
 const kthValue = linkedList.kthFromEnd(2);
-console.log(kthValue); 
+// console.log(kthValue); 
 
 
 
