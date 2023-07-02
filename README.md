@@ -31,3 +31,4 @@ To run your tests
 |linkedList-insertions|[linkedList-insertions](/javascript/linkedList//linkedList-insertions.md)|
 |linkedList-kth|[linkedList-kth](/javascript/linkedList/linkedList-kth.md)|
 |linkedlist-zip|[linkedlist-zip](/javascript/linked-list/linkedlist-zip.md)|
+|stack and queue|[stack and queue](/javascript/stack-and-Queue//readme.md)|
