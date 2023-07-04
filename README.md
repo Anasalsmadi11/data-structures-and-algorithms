@@ -32,3 +32,4 @@ To run your tests
 |linkedList-kth|[linkedList-kth](/javascript/linkedList/linkedList-kth.md)|
 |linkedlist-zip|[linkedlist-zip](/javascript/linked-list/linkedlist-zip.md)|
 |stack and queue|[stack and queue](/javascript/stack-and-Queue//readme.md)|
+|PsuedoQueue|[PsuedoQueue](/javascript//stack-and-Queue/code-challenge11/PsuedoQueue.md)|
