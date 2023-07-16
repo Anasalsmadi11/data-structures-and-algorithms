@@ -36,3 +36,4 @@ To run your tests
 |First out Animal Shelter.|[First out Animal Shelter.](/javascript/stack-and-Queue/code-challenge12/readme.md)|
 |validate bracket|[validate bracket](/javascript/stack-and-Queue/code-challenge13/readme.md)|
 |trees|[trees](./javascript//Trees//code-challenge15/readme.md)|
+|tree max value|[tree max value](./javascript//Trees//code-challenge16/readme.md)|
