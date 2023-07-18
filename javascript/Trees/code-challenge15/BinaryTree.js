@@ -71,6 +71,7 @@ class BinaryTree{
         }
         return findMaxValueNode(this.root);
       }
+
 }
 
 module.exports= BinaryTree;

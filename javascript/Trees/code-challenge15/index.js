@@ -24,6 +24,7 @@ seven.left = eight;
 seven.right = nine;
 
 
+
 tree= new BinaryTree(one)
 
 let preOrder= tree.preOrder()
@@ -66,3 +67,23 @@ console.log(bst.contains(8));
 
 console.log(bst.preOrder()); 
 console.log(tree.findMaxValue())
+
+ // ++++++++++++++++++++++++++ code challenge 17 +++++++++++++++++++
+function breadthFirst(tree){
+let result=[]
+let queue=[]
+let currentNode= tree.root
+queue.push(currentNode)
+while(queue.length){
+    currentNode= queue.shift()
+    result.push(currentNode.value)
+    if(currentNode.left) queue.push(currentNode.left)
+    if(currentNode.right) queue.push(currentNode.right)
+}
+return result
+
+}
+
+console.log("breadth first",breadthFirst(tree))
+
+module.exports= breadthFirst
