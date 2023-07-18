@@ -1,6 +1,6 @@
 const searchTree= require('../subClass')
 const Node= require('../node')
-
+const breadthFirst= require('../index')
 // Assuming Jest testing framework is used
 
 describe('searchTree', () => {
@@ -41,6 +41,7 @@ describe('searchTree', () => {
     test('postorder method should return an array with the post-order traversal of the tree', () => {
       expect(tree.postOrder()).toEqual([2, 4, 3, 6, 8, 7, 5]);
     });
+
     it('should return the maximum value in a binary tree', () => {
       const root = new Node(10);
       const node5 = new Node(5);
@@ -59,6 +60,51 @@ describe('searchTree', () => {
 
       expect(tree.findMaxValue()).toBe(20);
     });
+
+    // Assuming you have a Tree class with the root property
+class Tree {
+  constructor(root) {
+    this.root = root;
+  }
+}
+
+ // ++++++++++++++++++++++++++ code challenge 17 +++++++++++++++++++
+
+  it('returns an array of values in breadth-first order', () => {
+    const root = {
+      value: 10,
+      left: {
+        value: 5,
+        left: {
+          value: 3,
+          left: null,
+          right: null,
+        },
+        right: {
+          value: 8,
+          left: null,
+          right: null,
+        },
+      },
+      right: {
+        value: 15,
+        left: null,
+        right: {
+          value: 20,
+          left: null,
+          right: null,
+        },
+      },
+    };
+
+    const tree = new Tree(root);
+
+    const result = breadthFirst(tree);
+
+    expect(result).toEqual([10, 5, 15, 3, 8, 20]);
+
+});
+
   });
   
   
