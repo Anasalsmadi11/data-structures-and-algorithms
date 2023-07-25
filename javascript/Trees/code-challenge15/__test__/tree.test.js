@@ -1,7 +1,7 @@
 const searchTree= require('../subClass')
 const Node= require('../node')
 const breadthFirst= require('../index')
-// Assuming Jest testing framework is used
+const { fizzBuzzTree, getFizzBuzzValue, createKaryTree } = require('../fizz-buzz-tree')
 
 describe('searchTree', () => {
     let tree;
@@ -105,6 +105,51 @@ class Tree {
 
 });
 
+
+///////////////////// code challenge 19 /////////////////
+
+test('should convert tree values to Fizz, Buzz, or FizzBuzz', () => {
+  const originalTree = createKaryTree();
+  const fizzBuzzModifiedTree = fizzBuzzTree(originalTree);
+
+  // Helper function to recursively check the modified tree values
+  function checkTreeValues(node) {
+    if (!node) return;
+    const fizzBuzzValue = getFizzBuzzValue(node.value);
+
+    expect(node.value).toEqual(fizzBuzzValue);
+    node.children.forEach((child) => checkTreeValues(child));
+  }
+
+  checkTreeValues(fizzBuzzModifiedTree);
+});
+
+test('should return null for an empty tree', () => {
+  expect(fizzBuzzTree(null)).toBeNull();
+});
+});
+
+// Test cases for getFizzBuzzValue function
+describe('getFizzBuzzValue', () => {
+test('should return "Fizz" for multiples of 3', () => {
+  expect(getFizzBuzzValue(3)).toEqual('Fizz');
+  expect(getFizzBuzzValue(6)).toEqual('Fizz');
+});
+
+test('should return "Buzz" for multiples of 5', () => {
+  expect(getFizzBuzzValue(5)).toEqual('Buzz');
+  expect(getFizzBuzzValue(10)).toEqual('Buzz');
+});
+
+test('should return "FizzBuzz" for multiples of both 3 and 5', () => {
+  expect(getFizzBuzzValue(15)).toEqual('FizzBuzz');
+  expect(getFizzBuzzValue(30)).toEqual('FizzBuzz');
+});
+
+test('should return the original value as a string for other numbers', () => {
+  expect(getFizzBuzzValue(2)).toEqual('2');
+  expect(getFizzBuzzValue(7)).toEqual('7');
+});
   });
   
   
