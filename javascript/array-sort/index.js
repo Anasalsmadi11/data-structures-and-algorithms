@@ -24,3 +24,4 @@ function selectionSort(arr) {
   selectionSort(arrayToSort);
   console.log("Sorted array:", arrayToSort);
   
+  module.exports= selectionSort;
