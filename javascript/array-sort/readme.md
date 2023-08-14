@@ -1,0 +1,1 @@
+![whiteboard](./Sorted%20array.jpg)
