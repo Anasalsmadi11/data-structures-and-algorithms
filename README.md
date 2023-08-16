@@ -36,4 +36,5 @@ To run your tests
 |First out Animal Shelter.|[First out Animal Shelter.](/javascript/stack-and-Queue/code-challenge12/readme.md)|
 |validate bracket|[validate bracket](/javascript/stack-and-Queue/code-challenge13/readme.md)|
 |trees|[trees](./javascript//Trees//code-challenge15/readme.md)|
-|sorted array|[sorted array](./javascript/array-sort/readme.md)|
+|sorted array|[sorted array](./javascript/codeCahllenge26/readme.md)|
+|Merge Sort|[Merge Sort](./javascript/codeCahllenge27/readme.md)|
