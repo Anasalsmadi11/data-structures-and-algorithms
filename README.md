@@ -37,4 +37,4 @@ To run your tests
 |validate bracket|[validate bracket](/javascript/stack-and-Queue/code-challenge13/readme.md)|
 |trees|[trees](./javascript//Trees//code-challenge15/readme.md)|
 |sorted array|[sorted array](./javascript/codeCahllenge26/readme.md)|
-|Merge Sort|[Merge Sort](./javascript/codeCahllenge27/readme.md)|
+|Merge Sort|[Merge Sort](./javascript/codeChallenge27/mergesort.jpg)|
