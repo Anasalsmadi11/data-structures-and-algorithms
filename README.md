@@ -38,3 +38,4 @@ To run your tests
 |trees|[trees](./javascript//Trees//code-challenge15/readme.md)|
 |sorted array|[sorted array](./javascript/codeCahllenge26/readme.md)|
 |Merge Sort|[Merge Sort](./javascript/codeChallenge27/mergesort.jpg)|
+|Object sort|[Object Sort](./javascript/codeChallenge28//readme.md)|
