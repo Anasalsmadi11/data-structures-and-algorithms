@@ -39,4 +39,5 @@ To run your tests
 |sorted array|[sorted array](./javascript/codeCahllenge26/readme.md)|
 |Merge Sort|[Merge Sort](./javascript/codeChallenge27/mergesort.jpg)|
 |Object sort|[Object Sort](./javascript/codeChallenge28//readme.md)|
-|hashmap|[hashmap](./javascript/hashTable/readme.md)|
+|hashmap|[hashmap](./javascript/hashTable/codeChallenge30/readme.md)|
+|repeated words|[repeated words](./javascript/hashTable/codeChallenge31/readme.md)|
