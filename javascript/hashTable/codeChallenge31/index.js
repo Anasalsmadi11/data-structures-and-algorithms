@@ -116,26 +116,26 @@ class Hashmap{
         return  this.makeHash(key)
       
     }
-    repeatedWord(inputString) {
-        const words = inputString.toLowerCase().split(/\W+/); // this /\W+/ is different than " " cus this ignore anything other than the words so if there is a charecter like - (" so i went - to") it wont add it to the array
-        const encounteredWords = new Hashmap(this.size);
-
-        for (const word of words) {
-            if (encounteredWords.has(word)) {
-                return word; 
-            }
-            encounteredWords.set(word, word);
-        }
-
-        return null; 
-    }
 }
 
-const hashmap = new Hashmap(10); 
+function repeatedWord(inputString) {
+    const words = inputString.toLowerCase().split(/\W+/); // this /\W+/ is different than " " cus this ignore anything other than the words so if there is a charecter like - (" so i went - to") it wont add it to the array
+    const encounteredWords = new Hashmap(this.size);
+
+    for (const word of words) {
+        if (encounteredWords.has(word)) { // the encounteredWords put the array elements to linked list and then check them 
+            return word; 
+        }
+        encounteredWords.set(word, word);
+    }
+
+    return null; 
+}
+
 
 const inputString = "Once upon a time, there was a brave princess who...";
-const result = hashmap.repeatedWord(inputString)
+const result = repeatedWord(inputString)
 
 console.log(result); 
 
-module.exports= Hashmap
+module.exports=  repeatedWord
