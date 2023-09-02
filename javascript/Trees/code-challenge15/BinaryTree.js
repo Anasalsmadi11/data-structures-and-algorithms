@@ -8,7 +8,7 @@ class BinaryTree{
     preOrder(){  // i didnt add any new Node cuz here i dont want to add , i just want to traverse throught the array
         if (this.root === null) {
             return null;
-          }
+          } /// there is no need to put else here cus once the if achieved the return will stop the excution of the rest of the function
         let result =[]
         let traverse= (node)=>{
             result.push(node.value)

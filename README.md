@@ -41,3 +41,4 @@ To run your tests
 |Object sort|[Object Sort](./javascript/codeChallenge28//readme.md)|
 |hashmap|[hashmap](./javascript/hashTable/codeChallenge30/readme.md)|
 |repeated words|[repeated words](./javascript/hashTable/codeChallenge31/readme.md)|
+|Tree-intersection |[Tree-intersection ](./javascript/hashTable/tree-intersection/readme.md)|
