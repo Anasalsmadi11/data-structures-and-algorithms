@@ -50,3 +50,7 @@ class HashMap {
   const result = leftJoin(synonyms, antonyms);
   console.log(result);
   
+  module.exports={
+    HashMap,
+    leftJoin
+  }
