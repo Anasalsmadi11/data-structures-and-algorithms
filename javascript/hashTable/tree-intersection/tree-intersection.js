@@ -75,11 +75,11 @@ leveel_350.left= leveel_4
 leveel_350.right= leveel_500
 
 
-let firstTree= new BinaryTree(level_150)
-let secondTree= new BinaryTree(leveel_42)
+// let firstTree= new BinaryTree(level_150)
+// let secondTree= new BinaryTree(leveel_42)
 
-console.log(firstTree.preorder())
-console.log(secondTree.preorder())
+// console.log(firstTree.preorder())
+// console.log(secondTree.preorder())
 
 
 function tree_intersection(tree1, tree2){
@@ -97,7 +97,7 @@ let result=[]
     for(let i= 0 ; i<arr1.length; i++){
         for(let k= 0 ; k<arr2.length; k++){
     
-            if(arr1[i]===arr2[k]){
+            if(arr1[i]===arr2[k] && i===k){
 
                 let spliced_i= arr1.splice(i,1)  //splice takes O(n) always
                 let spliced_k =arr2.splice(i,1)
@@ -111,15 +111,20 @@ let result=[]
         
     }
     return result.flatMap(item => item )
+   
 
     
 }
 
-// let firstTree= new BinaryTree(level_150)
-// let secondTree= new BinaryTree(leveel_42)
+let firstTree= new BinaryTree(level_150)
+let secondTree= new BinaryTree(leveel_42)
 
 // console.log(firstTree.root.value)
+// let arr1=[1,3,3,4,5,6,7]
+// let arr2=[1,3,4,4,5,7,3]
+
 console.log(tree_intersection(firstTree, secondTree))
+// console.log(tree_intersection(arr1, arr2))
 
 module.exports={
     BinaryTree,
