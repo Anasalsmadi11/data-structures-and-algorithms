@@ -10,27 +10,38 @@ class Graph {
     this.adjacencyList.set(vertex, []);
     // return this.adjacencyList
   }
-  addEdge(start, end) {
+  addEdge(start, end,weight) {
     if (!this.adjacencyList.has(start) || !this.adjacencyList.has(end)) {
       console.log("one or both verticies are not existed");
     } else {
       const adjacencies = this.adjacencyList.get(start);
-      const edge = new Edge(end);
+      const edge = new Edge(end,weight);
       adjacencies.push(edge);
       return;
     }
   }
   getAllVertecies() {
-    if (this.vertices.size === 0) {
+    if (this.adjacencyList.size === 0) {
       return [];
     } else {
       const vertices = [];
       for (const vertex of this.adjacencyList.keys()) {
         vertices.push(vertex);
       }
-    //   console.log(this.adjacencyList.keys())
+      //   console.log("keys",this.adjacencyList.keys())
       return vertices;
     }
+  }
+
+  getNeighbors(vertex) {
+    if (this.adjacencyList.has(vertex)) {
+      return this.adjacencyList.get(vertex);
+    }
+    return [];
+  }
+
+  size() {
+    return this.adjacencyList.size;
   }
 }
 
@@ -60,4 +71,8 @@ myGraph.addEdge(five, four);
 
 myGraph.getAllVertecies();
 
-console.log(myGraph.getAllVertecies());
+console.log("all vertecies",myGraph.getAllVertecies());
+console.log("graph neighbors",myGraph.getNeighbors(zero));
+console.log("graph size",myGraph.size());
+
+module.exports= Graph
