@@ -33,46 +33,89 @@ class Graph {
     }
   }
 
-  getNeighbors(vertex) {
-    if (this.adjacencyList.has(vertex)) {
-      return this.adjacencyList.get(vertex);
-    }
-    return [];
-  }
+  // getNeighbors(vertex) {
+  //   if (this.adjacencyList.has(vertex)) {
+  //     return this.adjacencyList.get(vertex);
+  //   }
+  //   return [];
+  // }
 
   size() {
     return this.adjacencyList.size;
+  }
+  breadthFirst(node){
+    const result = []; 
+    const queue = []; 
+    const visited = new Set();
+    if (this.adjacencyList.size === 0) {
+      return result; 
+    }
+  
+    queue.push(node);
+
+    while (queue.length) {
+      const currentVertex = queue.shift();
+  
+      if (!visited.has(currentVertex)) {
+        visited.add(currentVertex); 
+  
+        result.push(currentVertex.value);
+  
+        const neighbors = this.getNeighbors(currentVertex, visited);
+  
+        for (const neighbor of neighbors) {
+          queue.push(neighbor.vertex);
+        }
+      }
+    }
+  
+    return result
+    // return Object.keys(result);
+  }
+  
+  getNeighbors(vertex, visited) {
+    const neighbors = [];
+    if (this.adjacencyList.has(vertex)) {
+      const adjacencyList = this.adjacencyList.get(vertex);
+  
+      for (const edge of adjacencyList) {
+        if (!visited.has(edge.vertex)) {
+          neighbors.push(edge);
+        }
+      }
+    }
+  
+    return neighbors;
   }
 }
 
 const myGraph = new Graph();
 
-const zero = new Vertex(0);
-const one = new Vertex(1);
-const two = new Vertex(2);
-const three = new Vertex(3);
-const four = new Vertex(4);
-const five = new Vertex(5);
+const Pandora = new Vertex("Pandora");
+const Arendelle = new Vertex("Arendelle");
+const Metroville = new Vertex("Metroville");
+const Monstroplolis = new Vertex("Monstroplolis");
+const Narnia = new Vertex("Narnia");
+const Naboo = new Vertex("Naboo");
 
-myGraph.addVertex(zero);
-myGraph.addVertex(one);
-myGraph.addVertex(two);
-myGraph.addVertex(three);
-myGraph.addVertex(four);
-myGraph.addVertex(five);
+myGraph.addVertex(Pandora);
+myGraph.addVertex(Arendelle);
+myGraph.addVertex(Metroville);
+myGraph.addVertex(Monstroplolis);
+myGraph.addVertex(Narnia);
+myGraph.addVertex(Naboo);
 
-myGraph.addEdge(zero, five);
-myGraph.addEdge(zero, three);
-myGraph.addEdge(three, one);
-myGraph.addEdge(four, one);
-myGraph.addEdge(two, three);
-myGraph.addEdge(zero, two);
-myGraph.addEdge(five, four);
+myGraph.addEdge(Pandora, Arendelle);
+myGraph.addEdge(Arendelle, Metroville);
+myGraph.addEdge(Arendelle, Monstroplolis);
+myGraph.addEdge(Monstroplolis, Naboo);
+myGraph.addEdge(Metroville, Naboo);
+myGraph.addEdge(Metroville, Narnia);
+myGraph.addEdge(Naboo, Narnia);
+
 
 myGraph.getAllVertecies();
 
-console.log("all vertecies",myGraph.getAllVertecies());
-console.log("graph neighbors",myGraph.getNeighbors(zero));
-console.log("graph size",myGraph.size());
+console.log(myGraph.breadthFirst(Pandora));
 
 module.exports= Graph
