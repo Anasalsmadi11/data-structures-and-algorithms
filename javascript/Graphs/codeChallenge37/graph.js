@@ -6,73 +6,65 @@ class Graph {
     this.adjacencyList = new Map();
   }
 
-  addVertex(vertex) {
-    this.adjacencyList.set(vertex, []);
-    // return this.adjacencyList
-  }
-  addEdge(start, end,weight) {
-    if (!this.adjacencyList.has(start) || !this.adjacencyList.has(end)) {
-      console.log("one or both verticies are not existed");
-    } else {
-      const adjacencies = this.adjacencyList.get(start);
-      const edge = new Edge(end,weight);
-      adjacencies.push(edge);
-      return;
-    }
-  }
-  getAllVertecies() {
-    if (this.adjacencyList.size === 0) {
-      return [];
-    } else {
-      const vertices = [];
-      for (const vertex of this.adjacencyList.keys()) {
-        vertices.push(vertex);
-      }
-      //   console.log("keys",this.adjacencyList.keys())
-      return vertices;
-    }
-  }
-
-  getNeighbors(vertex) {
-    if (this.adjacencyList.has(vertex)) {
-      return this.adjacencyList.get(vertex);
-    }
-    return [];
-  }
-
-  size() {
-    return this.adjacencyList.size;
+ 
+  addEdge(start, end,cost) {
+    if (!this.adjacencyList.has(start)) {
+      this.adjacencyList.set(start, new Map());
+    } 
+    this.adjacencyList.get(start).set(end, cost);
   }
 }
 
-const myGraph = new Graph();
 
-const zero = new Vertex(0);
-const one = new Vertex(1);
-const two = new Vertex(2);
-const three = new Vertex(3);
-const four = new Vertex(4);
-const five = new Vertex(5);
 
-myGraph.addVertex(zero);
-myGraph.addVertex(one);
-myGraph.addVertex(two);
-myGraph.addVertex(three);
-myGraph.addVertex(four);
-myGraph.addVertex(five);
+function businessTrip(graph, cityNames) {
+  if (cityNames.length === 0) {
+    return 0; 
+  }
 
-myGraph.addEdge(zero, five);
-myGraph.addEdge(zero, three);
-myGraph.addEdge(three, one);
-myGraph.addEdge(four, one);
-myGraph.addEdge(two, three);
-myGraph.addEdge(zero, two);
-myGraph.addEdge(five, four);
+  let totalCost = 0;
 
-myGraph.getAllVertecies();
+  for (let i = 0; i < cityNames.length - 1; i++) {
+    const currentCity = cityNames[i];
+    const nextCity = cityNames[i + 1];
 
-console.log("all vertecies",myGraph.getAllVertecies());
-console.log("graph neighbors",myGraph.getNeighbors(zero));
-console.log("graph size",myGraph.size());
+    if (graph.has(currentCity) && graph.get(currentCity).has(nextCity)) {
+      totalCost += graph.get(currentCity).get(nextCity);
+    } else {
+      return null;
+    }
+  }
 
-module.exports= Graph
+  return totalCost;
+}
+
+const directFlights = new Graph();
+
+directFlights.addEdge("Pandora", "Arendelle", 150);
+directFlights.addEdge("Metroville", "Arendelle", 99);
+directFlights.addEdge("Metroville", "Pandora", 82);
+directFlights.addEdge("Metroville", "New Monstropolis", 105);
+directFlights.addEdge("Arendelle", "New Monstropolis", 42);
+directFlights.addEdge("New Monstropolis", "Naboo", 73);
+directFlights.addEdge("Metroville", "Narnia", 37);
+directFlights.addEdge("Metroville", "Naboo", 36);
+directFlights.addEdge("Naboo", "Narnia", 250);
+
+const tripRoute= ['Metroville', 'Pandora' ]
+const tripRoute1= ['Arendelle', 'New Monstropolis', 'Naboo']
+const tripRoute2= ['Naboo', 'Pandora']
+const tripRoute3= ['Narnia', 'Arendelle', 'Naboo']
+
+
+const cost = businessTrip(directFlights.adjacencyList,tripRoute3)
+
+if(cost != null){
+ console.log(`The cost of the trip is ${cost}`);
+} else {
+  console.log("The trip is not possible.");
+}
+
+module.exports= {
+  Graph,
+  businessTrip
+}
